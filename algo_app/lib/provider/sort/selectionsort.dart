@@ -1,5 +1,5 @@
-import 'package:algo_app/models/sort_models.dart';
-import 'package:algo_app/provider/sort/sort-provider.dart';
+import 'package:algo_app/provider/sort/sort_provider.dart';
+import 'package:algo_app/models/sort_model.dart';
 
 class SelectionSortProvider extends SortProvider {
   @override

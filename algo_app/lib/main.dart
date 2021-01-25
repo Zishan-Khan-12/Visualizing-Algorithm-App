@@ -1,4 +1,7 @@
+import 'package:algo_app/provider/search/binary_search_provider.dart';
 import 'package:algo_app/provider/search/linear_search_provider.dart';
+import 'package:algo_app/provider/sort/bubble_sort_provider.dart';
+import 'package:algo_app/provider/sort/insertion_sort_provider.dart';
 import 'package:algo_app/provider/sort/quicksort.dart';
 import 'package:algo_app/provider/sort/selectionsort.dart';
 import 'package:algo_app/ux/pages/Home/home.dart';
@@ -19,12 +22,11 @@ class MyApp extends StatelessWidget {
             ChangeNotifierProvider(
               create: (_) => LinerSearchProvider(),
             ),
-            ChangeNotifierProvider(
-              create: (_) => QuickSortProvider(),
-            ),
-            ChangeNotifierProvider(
-              create: (_) => SelectionSortProvider(),
-            )
+            ChangeNotifierProvider(create: (_) => BinarySearchProvider()),
+            ChangeNotifierProvider(create: (_) => BubbleSortProvider()),
+            ChangeNotifierProvider(create: (_) => InsertionSortProvider()),
+            ChangeNotifierProvider(create: (_) => SelectionSortProvider()),
+            ChangeNotifierProvider(create: (_) => QuickSortProvider())
           ],
           child: Home(),
         ),

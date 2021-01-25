@@ -1,7 +1,7 @@
-import 'package:algo_app/provider/sort/sort-provider.dart';
-import 'package:algo_app/ux/widgets/sort/sort_button.dart';
-import 'package:algo_app/ux/widgets/sort/sort_speed.dart';
-import 'package:algo_app/ux/widgets/sort/sort_visualizer.dart';
+import 'package:algo_app/provider/sort/sort_provider.dart';
+import 'package:algo_app/ux/widgets/search/sort/sort_speed.dart';
+import 'package:algo_app/ux/widgets/search/sort/sort_visualizer.dart';
+import 'package:algo_app/ux/widgets/search/sort/sort_button.dart';
 import 'package:flutter/material.dart';
 
 class SortPage<T extends SortProvider> extends StatelessWidget {

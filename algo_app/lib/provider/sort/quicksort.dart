@@ -1,5 +1,6 @@
-import 'package:algo_app/models/sort_models.dart';
-import 'package:algo_app/provider/sort/sort-provider.dart';
+import 'package:algo_app/provider/sort/sort_provider.dart';
+import 'package:algo_app/models/sort_model.dart';
+import 'package:algo_app/utils/wait.dart';
 
 class QuickSortProvider extends SortProvider {
   @override
@@ -21,7 +22,7 @@ class QuickSortProvider extends SortProvider {
       if (start == end) {
         markNodeAsSorted(start);
         render();
-        await pause();
+        await wait();
       }
       return list;
     }
@@ -35,14 +36,14 @@ class QuickSortProvider extends SortProvider {
       markNodeForSorting(leftP);
       markNodeForSorting(rightP);
       render();
-      await pause();
+      await wait();
       if (list[leftP].value > list[pivot].value &&
           list[rightP].value < list[pivot].value) {
         final tmp = list[leftP];
         list[leftP] = list[rightP];
         list[rightP] = tmp;
         render();
-        await pause();
+        await wait();
       }
       if (list[leftP].value <= list[pivot].value) {
         markNodeAsNotSorted(leftP);
@@ -55,13 +56,13 @@ class QuickSortProvider extends SortProvider {
     }
     markNodeForSorting(rightP);
     render();
-    await pause();
+    await wait();
     final tmp = list[pivot];
     list[pivot] = list[rightP];
     list[rightP] = tmp;
     markNodeAsSorted(rightP);
     render();
-    await pause();
+    await wait();
 
     if (rightP - 1 - start < end - (rightP + 1)) {
       await _helper(list, start, rightP - 1);
